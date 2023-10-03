@@ -26,6 +26,22 @@ body {
     margin: 20px auto;
     border-radius: 10px;
     border: 2px solid rgb(70, 69, 69);
+    overflow: hidden;
+    position: relative;
+}
+
+.previus-oper {
+    font-size: 20px;
+    position: absolute;
+    top: 9%;
+    left: 5%;
+}
+
+.current-oper {
+    font-size: 37px;
+    position: absolute;
+    bottom: 9%;
+    right: 5%;
 }
 
 .del-buttons {
