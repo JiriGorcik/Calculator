@@ -12,7 +12,7 @@ let calc = []
 btns.forEach((oneButton) => {
     oneButton.addEventListener("click", () => {
         
-        if (oneButton.textContent !== "=") {
+        if (oneButton.textContent !== "=" && calc.length < 27) {
         calc.push(oneButton.textContent)
         calculation.textContent = calc.join("")
         }  
@@ -45,6 +45,10 @@ equalBtn.addEventListener("click", () => {
         calculation.textContent = calc = []
     }
     
+    if (result.textContent.length > 16) {
+        result.textContent = "Number is too big"
+    }
+
 })
 
 
