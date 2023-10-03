@@ -6,7 +6,7 @@ const deleteBtn = document.querySelector(".delete")
 const equalBtn = document.querySelector(".eq")
 
 
-
+let operators = ["+", "-", "/", "*"]
 let calc = []
 
 btns.forEach((oneButton) => {
@@ -36,19 +36,27 @@ clearBtn.addEventListener("click", () => {
 
 
 equalBtn.addEventListener("click", () => {
-    let done = eval(calc.join("").replace(/[^-()\d/*+.]/g, ''))
-    result.textContent = done
+
+    try {
+        let done = eval(calc.join("").replace(/[^-()\d/*+.]/g, ''))
+        result.textContent = done
+    } catch {
+        result.textContent = "Math error"
+    }
 
     if (result.textContent == "Infinity") {
         alert("You can´t divide with zero")
         result.textContent = 0
         calculation.textContent = calc = []
-    }
+    } 
     
     if (result.textContent.length > 16) {
         result.textContent = "Number is too big"
     }
 
+    if (calculation.textContent == []) {
+        result.textContent = 0
+    }
 })
 
 
