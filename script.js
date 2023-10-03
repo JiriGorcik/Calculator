@@ -36,7 +36,7 @@ clearBtn.addEventListener("click", () => {
 
 
 equalBtn.addEventListener("click", () => {
-    let done = eval(calc.join(""))
+    let done = eval(calc.join("").replace(/[^-()\d/*+.]/g, ''))
     result.textContent = done
 
     if (result.textContent == "Infinity") {
@@ -44,6 +44,7 @@ equalBtn.addEventListener("click", () => {
         result.textContent = 0
         calculation.textContent = calc = []
     }
+    
 })
 
 
