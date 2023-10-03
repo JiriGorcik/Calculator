@@ -38,7 +38,14 @@ clearBtn.addEventListener("click", () => {
 equalBtn.addEventListener("click", () => {
     let done = eval(calc.join(""))
     result.textContent = done
+
+    if (result.textContent == "Infinity") {
+        alert("You can´t divide with zero")
+        result.textContent = 0
+        calculation.textContent = calc = []
+    }
 })
+
 
 
 
