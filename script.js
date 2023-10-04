@@ -6,19 +6,24 @@ const deleteBtn = document.querySelector(".delete")
 const equalBtn = document.querySelector(".eq")
 
 
-let operators = ["+", "-", "/", "*"]
+let operators = ["+", "-", "*", "/"]
 let calc = []
 
+/* Num Buttons */
 btns.forEach((oneButton) => {
     oneButton.addEventListener("click", () => {
         
         if (oneButton.textContent !== "=" && calc.length < 27) {
         calc.push(oneButton.textContent)
         calculation.textContent = calc.join("")
-        }  
+        }     
     })
 })
 
+
+
+
+/* Delete Button */
 deleteBtn.addEventListener("click", () => {
     calc.pop()
     calculation.textContent = calc.join("")
@@ -28,13 +33,14 @@ deleteBtn.addEventListener("click", () => {
     }
 })
 
+/* Clear Button */
 clearBtn.addEventListener("click", () => {
     calc = []
     calculation.textContent = calc
     result.textContent = 0
 })
 
-
+/* Equal Button */
 equalBtn.addEventListener("click", () => {
 
     try {
@@ -52,11 +58,12 @@ equalBtn.addEventListener("click", () => {
     
     if (result.textContent.length > 16) {
         result.textContent = "Number is too big"
-    }
+    } 
 
     if (calculation.textContent == []) {
         result.textContent = 0
     }
+
 })
 
 
